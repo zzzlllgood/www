@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/com.css" type="text/css" />
+<style type="text/css">
+.schRe{width:500px;border:1px solid #ccc;float:left;padding:10px;}
+.editBox{margin-left:530px;border:1px solid #ccc;}
+.editBox .normal input,.editBox .normal textarea,.editBox .normal button{display:none;}
+.editBox .edit input,.editBox .edit button{display:inline-block;}
+.editBox .edit textarea{display:block;}
+</style>
+</head>
+<body>
+	<div id="header"></div>
+	<div class="wrapper" id="wrapper">
+	<a href="###" id="a1">点击事件</a>
+		<div class="schRe">
+			
+		</div>
+        <div class="editBox">
+			
+		</div>
+        
+        
+        
+	</div>
+	<div id="footer"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="baiduTemplate/js/baiduTemplate.js"></script>
+    <script type="text/javascript" src="js/templeteLib.js"></script>
+    <script type="text/javascript" src="js/urls.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    
+	<script type="text/javascript">
+
+	jQuery(function($){
+
+		function fn(){}
+		
+		
+		/*头尾部加载*/
+		load_header_footer();
+		
+		//url处理...
+
+		/*当前页面存在的所有模板实例名字声明*/
+		var modules=['mA','mB'];  
+
+		/*搜索结果模块初始加载*/
+		$.getJSON(Modules[menuIndex].mA.url,function(json, textStatus) {//http://api.douban.com/v2/book/1220562
+				var data={lists:json};
+				if(!Modules[menuIndex].mA.cacheData)Modules[menuIndex].mA.cacheData=data;
+				
+				var schReOpts={
+					"module":rules.maRule,
+					"datas":data,
+					"box":$(".schRe").get(0)
+				};
+				module.mA = new tempEngine(schReOpts);
+				module.mA.init();
+				if(!Modules[menuIndex].mA.cacheHTML)Modules[menuIndex].mA.cacheHTML=module.mA.render();
+
+				var dfd=$.Deferred();
+				dfd.resole();
+				return dfd;
+
+		});
+		/*搜索结果编辑模块初始加载*/
+		$.getJSON(Modules[menuIndex].mB.url,function(json, textStatus) {//http://api.douban.com/v2/book/1220562
+				if(!Modules[menuIndex].mB.cacheData)Modules[menuIndex].mB.cacheData=data;
+				var data={lists:json};  
+				var schReOpts={
+					"module":rules.mbRule,
+					"datas":data,
+					"box":$(".editBox").get(0),
+					"editable":true,
+				};
+				module.mB = new tempEngine(schReOpts);
+				module.mB.init();
+				if(!Modules[menuIndex].mB.cacheHTML)Modules[menuIndex].mB.cacheHTML=module.mB.render();
+				
+				
+		});
+
+		$("#editAll").on("click",function(){
+			module.mB.edit();
+		});
+		$("#saveAll").on("click",function(){alert(1);
+			// var $box=$(module.mB.box);
+			// $box.find(".normal").find("input,textarea,button").show().siblings("span").hide();
+			module.mB.save();
+		});
+		$("#edit").on("click",function(){
+			// var $box=$(module.mB.box);
+			// $box.find(".normal").find("input,textarea,button").show().siblings("span").hide();
+			//module.mB.edit();
+		});
+		$("#save").on("click",function(){
+			// var $box=$(module.mB.box);
+			// $box.find(".normal").find("input,textarea,button").show().siblings("span").hide();
+			//module.mB.save();
+		});
+
+
+
+
+		/*按模块加载数据*/
+		var menuChange=window.menuChange=function(){
+			/*菜单切换---搜索结果模块加载*/
+			if(url.mA[menuIndex].cacheHTML){
+				var html=url.mA[menuIndex].cacheHTML;
+					module.mA.box.innerHTML=html;
+				return;
+			}else if(url.mA[menuIndex].cacheData){
+				var data=url.mA[menuIndex].cacheData;
+					module.mA.datas=data,
+					module.mA.insertHTML();
+				return;
+			}else{
+				$.getJSON(url.mA[menuIndex].url,function(json, textStatus) {//http://api.douban.com/v2/book/1220562
+					if(!url.mA[menuIndex].cacheData)url.mA[menuIndex].cacheData=data;
+					var data={lists:json};
+					module.mA.datas=data,
+					module.mA.insertHTML();
+					if(!url.mA[menuIndex].cacheHTML)url.mA[menuIndex].cacheHTML=module.mA.render();
+					return;
+				});
+			}
+		}
+	});
+	</script>
+</body>

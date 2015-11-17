@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{font-size:12px;background:#fff url(img/thmeloom-bg.png) repeat;line-height:1.8em;}
+@font-face { 
+font-family: 'icomoon'; 
+src:url('font/home/icomoon.eot'); 
+src: url('font/home/icomoon.eot?#iefix') format('embedded-opentype'), 
+url('font/home/icomoon.woff') format('woff'), 
+url('font/home/icomoon.ttf') format('truetype'), 
+url('font/home/icomoon.svg') format('svg');  
+font-style: normal; 
+font-weight: 400; 
+
+} 
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-size:1em;
+	margin-right:0.2em;
+}
+ul{overflow:hidden;}
+ul li{float:left; list-style-type:none;}
+h1,h2,h3,h4,h5,h6{color: rgba(12, 12, 12, 0.9);-ms-text-shadow: 0px 2px 0px #FFF;-moz-text-shadow: 0px 2px 0px #FFF;text-shadow: 0px 2px 0px #FFF;}
+.orange{color: #F15352;}
+.gray{ color:#CCC;}
+.small{ font-size:0.8em;}
+.clearfix:after{
+  content: "\0020"; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;
+  overflow:hidden; 
+}
+.clearfix {display: block; clear:both;}
+
+
+.round{ 
+-khtml-border-radius: 10px; /* Konqueror */ 
+-rim-border-radius: 10px; /* RIM */ 
+-ms-border-radius: 10px; /* Microsoft */ 
+-o-border-radius: 10px; /* Opera */ 
+-moz-border-radius: 10px; /* Mozilla (如Firefox) */ 
+-webkit-border-radius: 10px; /* Webkit (如Safari和Chrome) */ 
+border-radius: 10px; /* W3C */ 
+} 
+.txtShadow{
+text-shadow: 4px 4px 0px #404442; 
+text-shadow: 4px 4px 0px hsla(140, 3%, 26%, 0.4); 
+}
+.boxShadow{
+-ms-box-shadow:inset 0px 3px 5px #444444; 
+-moz-box-shadow:inset 0px 3px 5px #444444; 
+-webkit-box-shadow:inset 0px 3px 5px #444444; 
+box-shadow:inset 0px 3px 5px #444444; 	
+}
+.background-linear{background: linear-gradient(90deg, #ffffff 0%, #e4e4e4 50%, #ffffff 100%);}
+.background-radial{background: radial-gradient(center, ellipse cover, #ffffff 72%, #dddddd 100%);}
+.transition{
+transition-property: all; 
+transition-duration: 1s; 
+transition-timing-function: ease; 
+transition-delay: 0s; 
+/*
+-o-transition: all 1s ease 0s; 
+-ms-transition: all 1s ease 0s; 
+-moz-transition: all 1s ease 0s; 
+-webkit-transition: all 1s ease 0s;
+transition: all 1s ease 0s; 
+合并*/ 
+}
+.column{
+	column-count: 4; 
+	column-gap: 2em; 
+	column-rule: thin dotted #999; 
+	column-width: 12em; 	
+	
+}
+
+
+
+
+

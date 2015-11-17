@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>test</title>
+<style type="text/css">
+#test{ width:100px;height:100px;background-color:yellow;display:none }
+</style>
+</head>
+<body>
+<!--操作对象的DOM-->
+<div id="test"></div>
+</body>
+<script type="text/javascript">
+fadeOpacity("test",-1);//淡入
+fadeOpacity("test",1);//淡出
+//淡入淡出函数
+function fadeOpacity(id,swt,callback){
+	//计数初始化
+	if(!window.fadeOpacity[id]) fadeOpacity[id]= 0;
+	//参数swt为-1时，向透明变化，为1时，向非透明变化
+	var f = (swt==1)?"0123456789":"9876543210";
+	//淡入淡出处理
+	if(fadeOpacity[id] < f.length-1){
+		var opa = f.charAt(fadeOpacity[id])/10;
+		if( opa*10 == 10 ) return;
+		SetOpacity(id,opa);//改变不透明度
+		//200/1000秒后再执行fadeOpacity
+		setTimeout('fadeOpacity("'+id+'","'+swt+'")',200);
+	}else{//结束
+		SetOpacity(id,(swt==1)?10:0);
+		fadeOpacity[id]= null;
+	}
+	//计数增加
+	fadeOpacity[id]++;
+}
+//不透明度设置函数
+function SetOpacity(id,arg){
+	if(document.all){
+		document.all(id).style.filter = "alpha(opacity="+(arg * 100)+")";
+	}else if(document.getElementById) document.getElementById(id).style.opacity =arg
+}
+</script>
+</html>
+

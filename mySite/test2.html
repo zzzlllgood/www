@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <style>
+    input{background:#900;border:none;outline:none;}
+	input:focus{outline:none;border:none;}
+    </style>
+</head>
+<body>
+<a href="###" id="a1" data-bb="bbb"><p><span>点击事件</span></p></a>
+<form>
+<input type="submit"/>
+<input type="submit"/>
+</form>
+<script type="text/javascript" src="js/jquery2.0.3/jquery-2.0.3-bak.js"></script>
+
+<script type="text/javascript">
+//模拟一个简单的参数处理操作
+console.log(2);console.log(location.hash);
+switch(location.hash){
+    case '#paramdo':
+        callBack();
+        break;
+    case '#paramset':
+        //do something……
+        break;
+}
+
+function callBack(){
+    try {
+        parent.location.hash = 'somedata';
+    } catch (e) {
+        // ie、chrome的安全机制无法修改parent.location.hash，
+        // 所以要利用一个中间的cnblogs域下的代理iframe
+        var ifrproxy = document.createElement('iframe');
+        ifrproxy.style.display = 'none';
+        ifrproxy.src = 'test.html#aaaaa';    // 注意该文件在"a.com"域下
+        document.body.appendChild(ifrproxy);
+    }
+}
+	
+
+</script>
+</body>
+</html>

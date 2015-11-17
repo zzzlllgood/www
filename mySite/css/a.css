@@ -1,0 +1,51 @@
+.alert {
+  padding: 10px;
+  margin-bottom: 50px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.alert .alert-link {
+  font-weight: bold;
+}
+.alert > p,
+.alert > ul {
+  margin-bottom: 0;
+}
+.alert > p + p {
+  margin-top: 5px;
+}
+.alert-dismissable,
+.alert-dismissible {
+  padding-right: 30px;
+}
+.alert-dismissable .close,
+.alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+.alert-success {
+  background: #ff9900;
+  border: 1px solid #ff9900;
+  color: blue;
+}
+.alert-info {
+  background: #ff9900;
+  border: 1px solid #ff9900;
+  color: blue;
+}
+.alert-warning {
+  background: #ff9900;
+  border: 1px solid #ff9900;
+  color: blue;
+}
+.alert-danger {
+  background: #ff9900;
+  border: 1px solid #ff9900;
+  color: blue;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/com.css" type="text/css" />
+<style type="text/css">
+.schRe{width:500px;border:1px solid #ccc;float:left;padding:10px;}
+.editBox{margin-left:530px;border:1px solid #ccc;}
+.editBox .normal input.txt,.editBox .normal textarea{display:none;}
+.editBox .edit input.txt{display:inline-block;}
+.editBox .edit textarea{display:block;}
+</style>
+</head>
+<body>
+	<div id="header"></div>
+	<div class="wrapper" id="wrapper">
+		<a href="###" id="a1">点击事件</a>
+		<div class="schRe">
+			
+		</div>
+        <div class="editBox">
+			
+		</div>
+        
+        
+        
+	</div>
+	<div id="footer"></div>
+	<script type="text/javascript" src="js/jquery2.0.3/jquery-2.0.3-bak.js"></script>
+    <script type="text/javascript" src="baiduTemplate/js/baiduTemplate.js"></script>
+    <script type="text/javascript" src="js/templeteLib.js"></script>
+    <script type="text/javascript" src="js/urls.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    
+	<script type="text/javascript">
+
+	jQuery(function($){
+		
+		/*头尾部加载*/
+		load_header_footer();
+		/*按模块加载数据*/
+		var option={
+			modules:Modules[menuIndex],
+			boxs:[
+					{mA:$('.schRe'),mB:$(".editBox")},
+					{mA:$('.schRe'),mB:$(".editBox")}
+				],
+			rules:[
+					{mA:Rules.maRule,mB:Rules.mbRule},
+					{mA:Rules.mcRule,mB:Rules.mdRule}
+				],
+			callbacks:[
+					{mA:callbackMa,mB:callbackMb},
+					{mA:callbackMc,mB:callbackMd}
+				]
+		}
+
+		module.loadDatas(option);
+		function callbackMa(data){                                
+			console.log(666);
+		}
+		function callbackMb(data){
+			console.log(data);
+			$(".editBox").on("click",$('input[type="button"]'),function(e){
+				var $box=$(".editBox");
+				var $li=$box.find('li.state');
+				
+				if(e.target.id=='editAll'){
+					$li.addClass('edit');
+				}else if(e.target.id=='saveAll'){
+					$li.removeClass('edit');
+				}
+			});
+		}
+		function callbackMc(data){
+			
+		}
+
+		
+		function callbackMd(data){
+			console.log(data);
+			$(".editBox").on("click",$('input[type="button"]'),function(e){
+				console.log(123);
+				var $box=$(".editBox");
+				var $cur=$(e.target);
+				
+				if($cur.data('role')=='edit'){
+					$cur.closest('li').addClass('edit');
+				}else if($cur.data('role')=='save'){
+					$cur.closest('li').removeClass('edit');
+				}
+			});
+		}
+
+
+		/*导航切换*/
+		var menuChange=window.menuChange=function(){
+			option.modules=Modules[menuIndex];
+			module.loadDatas(option);
+
+		}
+	});
+	</script>
+</body>

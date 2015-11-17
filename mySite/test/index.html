@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="css/index.css" rel="stylesheet"/>
+	<script src="js/html5shiv.js"></script>
+	<style>
+	table, td  {
+	  border: 1px solid grey;
+	  border-collapse: collapse;
+	  padding: 5px;
+	}
+	</style>
+	
+</head>
+<body>
+
+	<div class="ng-app:hh ng-scope" ng-app="hh" id="ng-app" ng-init="name='小明'">
+		<section class="control-group" ng-class="infoClassname" ng-controller="wordCount" >
+			<label class="control-label">Section One</label>
+			<div class="controls">
+
+				<div class="input-append">
+					<input class="span2" type="text" ng-model="txt" ng-trim="false"  ng-init="max=10"/>		
+					<span class="add-on"> <i ng-class="getIcon"></i>
+						{{getLength()}}/
+						<span>{{max}}</span>
+					</span>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="control-group" ng-class="infoClassname" ng-controller="wordCount">
+			<label class="control-label">Section Two</label>
+			<div class="controls">
+
+				<div class="input-append">
+					<input class="span2" type="text" ng-model="txt" ng-trim="false" ng-init="max=15"/>		
+					<span class="add-on"> <i ng-class="getIcon"></i>
+						{{getLength()}}/
+						<span>{{max}}</span>
+					</span>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="control-group" ng-class="infoClassname" ng-controller="wordCount">
+			<label class="control-label">Section Three</label>
+			<div class="controls">
+
+				<div class="input-append">
+					<input class="span2" type="text" ng-model="txt" ng-trim="false" ng-init="max=5"/>		
+					<span class="add-on">
+						<i ng-class="getIcon"></i>
+						{{getLength()}}/
+						<span>{{max}}</span>
+					</span>
+				</div>
+
+			</div>
+		</section>
+		<details>这3个字数统计由AngularJS控制</details>
+		<p>--------------------------------</p>	
+		<p>在输入框中尝试输入:</p>
+		<p>姓名: <input type="text" data-ng-model="name"></p>
+		<p data-ng-bind="name"></p>
+		<p>--------------------------------</p>	
+		<p>我的第一个表达式： {{ 5 + 5 | currency}}</p>
+		<p>--------------------------------</p>	
+		<div ng-controller="myCtrl">
+			名:
+			<input type="text" ng-model="firstName">
+			<br>
+			姓:
+			<input type="text" ng-model="lastName">
+			<br>
+			<br>姓名: {{firstName + " " + lastName}}
+		</div>
+		<p>--------------------------------</p>	
+		<div ng-init="quantity=3;cost=5">
+			<p>总价: <span ng-bind="quantity * cost"></span></p>
+		</div>
+		<p>--------------------------------</p>	
+		
+		<div ng-controller="ctrlirepeat" >
+			<button ng-click="toggle()">toggle</button>
+			<input type="text" ng-model="test"/>
+			<ul ng-hide="lihide">
+				<li ng-repeat="i in names|filter:test |orderBy:'country'">{{$index+1+"、"+i.id+"="+i.title|uppercase}}</li>
+
+			</ul>
+			 <table>
+			 	<tr ng-repeat="x in names">
+			 		<td ng-if="$odd" style="background-color:#f1f1f1">{{ x.id }}</td>
+			 		<td ng-if="$even">{{ x.id }}</td>
+			 		<td ng-if="$odd" style="background-color:#f1f1f1">{{ x.title }}</td>
+			 		<td ng-if="$even">{{ x.title }}</td>
+			 	</tr>
+			 </table>
+		</div>
+		<p>--------------------------------</p>	
+		<p>
+			<button ng-disabled="mySwitch">点我！</button>
+		</p>
+
+		<p>
+			<input type="checkbox" ng-model="mySwitch">按钮</p>
+		<p>--------------------------------</p>
+		<div ng-init="hour=13">
+			<p ng-show="hour >12">我是可见的。</p>
+			<p>--------------------------------</p>
+		</div>
+		<p>--------------------------------</p>		
+		<button ng-init="count=0" ng-click="count = count + 1">点阿斯顿发顺丰我！</button>
+		<p>{{ count }}</p>
+		<p>--------------------------------</p>		
+		<form novalidate ng-controller="formCtrl">
+			First Name:
+			<br>		
+			<input type="text" ng-model="user.firstName">		
+			<br>		
+			Last Name:
+			<br>		
+			<input type="text" ng-model="user.lastName">		
+			<br>		
+			<br>		
+			<button ng-click="reset()">RESET</button>
+			<p>form = {{user}}</p>
+			<p>master = {{master}}</p>
+		</form>
+		
+		<p>--------------------------------</p>
+		<div class="container" ng-controller="userCtrl">
+			<div ng-include="'table.html'"></div>
+			<div ng-include="'form.html'"></div>
+		</div>
+
+	</div>
+	<p>-------------------------------------------------------------------------------------------</p>
+	<!-- <div id="mapp" ng-app="myApp" ng-controller="myCtrl">
+		名:
+		<input type="text" ng-model="first">
+		<br>
+		姓:
+		<input type="text" ng-model="last">
+		<br>
+		<br>姓名: {{first + " " + last}}
+	</div> -->
+<script src="js/json2.js"></script>
+<script src="js/angular.min.js"></script>
+<script>
+
+    var app=angular.module("hh",[]);
+
+    app.controller("wordCount",function($scope){
+        //最大值获取
+        var maxLength=$scope.max;
+        var getMax=function(){
+            if(!maxLength || maxLength<=0){
+                maxLength=$scope.max;}
+            return  maxLength;
+        };
+
+        //长度获取
+        $scope.getLength=function(){
+            if($scope.txt){
+                var num=$scope.txt.length;
+                var getWarning=function(n){
+                    if(n>getMax() || n<0){
+                        return "error";
+                    }else{return "info"}
+                };
+
+                if(getWarning(num)=="error"){
+                    $scope.infoClassname="error";
+                    $scope.getIcon="icon-remove";
+                }else{
+                    $scope.infoClassname=null;
+                    $scope.getIcon=null;
+                };
+
+                return parseInt(num);
+            }else{
+                return 0;
+            }
+        }
+    });
+
+	app.controller('myCtrl', function($scope) {
+	    $scope.firstName= "John";
+	    $scope.lastName= "Doe";
+	});
+	app.controller('ctrlirepeat', function($scope, $http) {
+		$scope.lihide=false;
+		$scope.toggle=function(){
+			$scope.lihide=!$scope.lihide;
+		};
+	    $http.get("index.php")
+	    .success(function(response) {
+	    	$scope.names = response.books;
+	    });
+	});
+	app.controller('formCtrl', function($scope) {
+	    $scope.master = {firstName: "John", lastName: "Doe"};
+	    $scope.reset = function() {
+	        $scope.user = angular.copy($scope.master);
+	    };
+	   $scope.reset();
+	});
+
+	app.controller('userCtrl',function($scope){
+		$scope.fName='';
+		$scope.lName='';
+		$scope.passw1='';
+		$scope.passw2='';
+		$scope.users = [
+			{id:1, fName:'Hege',lName:"Pege" },
+			{id:2, fName:'Kim',lName:"Pim" },
+			{id:3, fName:'Sal',lName:"Smith" },
+			{id:4, fName:'Jack',lName:"Jones" },
+			{id:5, fName:'John',lName:"Doe" },
+			{id:6, fName:'Peter',lName:"Pan" }
+		];
+		$scope.edit = true;
+		$scope.error = false;
+		$scope.incomplete = false; 
+		$scope.editUser = function(id) {
+			if (id == 'new') {
+			    $scope.edit = true;
+			    $scope.incomplete = true;
+			    $scope.fName = '';
+			    $scope.lName = '';
+			} else {
+			    $scope.edit = false;
+			    $scope.fName = $scope.users[id-1].fName;
+			    $scope.lName = $scope.users[id-1].lName;
+			}
+		};
+		$scope.$watch('passw1',function(){$scope.test();});
+		$scope.$watch('passw2',function(){$scope.test();});
+		$scope.$watch('fName',function(){$scope.test();});
+		$scope.$watch('lName',function(){$scope.test();});
+		
+		
+		$scope.test = function() {
+			if ($scope.passw1 !== $scope.passw2) {
+				$scope.error = true;
+			} else {
+				$scope.error = false;
+			}
+			$scope.incomplete = false;
+			if ($scope.edit && (!$scope.fName.length ||!$scope.lName.length ||!$scope.passw1.length || !$scope.passw2.length)) {
+				$scope.incomplete = true;
+			}
+		};
+
+
+
+
+
+
+
+
+
+
+
+	});
+</script>
+
+</body>
+</html>

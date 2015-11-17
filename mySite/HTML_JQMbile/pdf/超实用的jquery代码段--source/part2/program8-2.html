@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>test</title>
+
+</head>
+<body>
+<!--
+操作对象的DOM
+-->
+
+<p id="one">将此标签的文字变为红色</p>
+<p id="two">将此标签的文字变为白色，背景变为绿色</p>
+</body>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(function(){
+    $('p#one').css('color','red');
+    $('p#two').css({color:'white',backgroundColor:'green'});
+});
+</script>
+</html>
+

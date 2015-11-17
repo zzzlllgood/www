@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+.container{color:blue;-moz-box-orient:horizontal;width:100%;height:500px;background:hsla(255,50%,60%,0.5);display: -moz-box;/*-moz-column-count:3;*/-moz-box-sizing:border-box;}
+.box{width:200px;border:1px solid #aaa;-moz-box-sizing:border-box;word-break: break-all;word-wrap:normal;}
+.leftbox{-moz-box-oridinal-group:1;}
+.rightbox{-moz-box-oridinal-group:2;-moz-box-flex:2;overflow: auto;resize:both;}
+.content{-moz-color:initial;color:initial;display:-moz-box;-moz-box-align:center;-moz-box-pack:center;-moz-box-ordinal-group:3;border:1px solid yellow;outline:2px solid green;outline-offset:-5px;-moz-box-flex:1;-moz-box-sizing:border-box;word-break: break-all;word-wrap:normal;}
+#a{width:100px;height: 100px;background:blue;}
+#b{width:300px;height:300px;background:yellow;}
+</style>
+<!-- <link rel="stylesheet" href="bootstrap-3.3.4/dist/css/bootstrap.css" type="text/css" /> -->
+</head>
+<body onload="init();">
+	<div class="container">
+		<div class="box leftbox">
+			
+		</div>
+		<div class="content">
+			<input type="file" id="file"/>
+			<button onclick="reader();">加载</button>
+
+			<div id="a" class="drag" draggable="true">aaaa</div>
+			<canvas id="canvas" width="400" height="400"></canvas>
+
+			
+			<div id="b" class="drag">bbbbb</div>
+		</div>
+		<div class="box rightbox">
+			
+		</div>
+	</div>
+
+<!-- <script type="text/javascript" src="../js/jquery-1.9.1.js"></script> -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+function init(){
+	var a=document.getElementById('a');
+	var b=document.getElementById('b');
+	a.addEventListener('dragstart',function(e){
+		var dt=e.dataTransfer;
+		dt.effectAllowed='link';
+		dt.setData('text/plain','你好');
+		console.log('dragstart');
+	},false);
+	a.addEventListener('drag',function(e){
+		console.log('drag');
+	},false);
+	b.addEventListener('dragend',function(e){
+		e.preventDefault();
+	},false);
+	b.addEventListener('drop',function(e){
+		var dt=e.dataTransfer;
+		var text=dt.getData('text/plain');
+		b.textContent+=text;
+		e.preventDefault();
+		e.stopPropagation();
+	},false);
+	b.addEventListener('dragleave',function(){
+		console.log('leave');
+	},false);
+	b.addEventListener('dragenter',function(){
+		console.log('enter');
+	},false);
+	b.addEventListener('dragover',function(e){
+		console.log('dragover');
+		var dt=e.dataTransfer;
+		dt.dropEffect='link';
+	},false);
+	document.ondragover=function(e){
+		e.preventDefault();
+	}
+	document.ondrop=function(e){
+		e.preventDefault();
+	}
+	var canv=document.getElementById('canvas');
+	var cont=canv.getContext('2d');
+	// var g1=cont.createLinearGradient(0,0,0,300);
+	// g1.addColorStop(0,'rgb(152,160,74)');
+	// g1.addColorStop(1,'rgb(152,34,74)');
+	var g1=cont.createRadialGradient(300,100,0,300,100,100);
+	g1.addColorStop(0.1,'rgb(152,160,74)');
+	g1.addColorStop(0.3,'rgb(152,34,74)');
+	g1.addColorStop(1,'rgb(152,34,174)');
+	// var a=0,b=0,c=0;
+	 cont.fillStyle=g1;  ///'#ffffff';
+	 cont.fillRect(0,0,400,400);
+	// var n=0;
+	// // var g2=cont.createLinearGradient(0,0,300,0);
+	// // g2.addColorStop(0,'rgba(23,78,74,0.5)');
+	// // g2.addColorStop(1,'rgba(4,6,255,0.5)');
+	// var g2=cont.createRadialGradient(250,250,0,250,250,300);
+	// g2.addColorStop(0.1,'rgba(23,78,74,0.5)');
+	// g2.addColorStop(0.7,'rgba(4,6,255,0.5)');
+	// g2.addColorStop(1,'rgba(4,255,5,0.5)');
+	// for(var i=0;i<10;i++){
+	// 	cont.beginPath();
+	// 	cont.arc(i*25,i*25,i*10,0,Math.PI*2,true);
+	// 	cont.closePath();
+	// 	a=Math.floor(Math.random()*254+1);
+	// 	b=Math.floor(Math.random()*254+1);
+	// 	c=Math.floor(Math.random()*254+1);
+
+	// 	//cont.fillStyle='rgba('+a+','+b+','+c+',0.5)';
+	// 	cont.fillStyle=g2;
+	// 	cont.fill();
+	// }
+
+	// var n=0;
+	// var dx=250;
+	// var dy=250;
+	// var s=100;
+	// cont.beginPath();
+	// cont.fillStyle='rgba('+Math.floor(Math.random()*254+1)+','+Math.floor(Math.random()*254+1)+','+Math.floor(Math.random()*254+1)+',0.8)';
+	// cont.strokeStyle='blue';
+	// var x=Math.sin(0);
+	// var y=Math.cos(0);
+	// var dig=Math.PI/15*11;
+	// cont.moveTo(dx,dy);
+	// for(var j=0;j<30;j++){
+	// 	var x=Math.sin(j*dig);
+	// 	var y=Math.cos(j*dig);
+	// 	//cont.lineTo(dx+x*s,dy+y*s);
+	// 	//cont.bezierCurveTo(dx+x*s,dy+y*s-100,dx+x*s+100,dy+y*s+100,dx+x*s,dy+y*s);
+	// 	//cont.quadraticCurveTo(dx+x*s,dy+y*s-100,dx+x*s,dy+y*s);
+	// }
+	// cont.closePath();
+	// cont.fill();
+	// cont.stroke();
+	
+
+	//colors(cont);
+	//stars(cont);
+	
+function stars(cont){
+	cont.translate(100,50);
+	//cont.fillStyle='rgba('+Math.floor(Math.random()*254+1)+','+Math.floor(Math.random()*254+1)+','+Math.floor(Math.random()*254+1)+',0.8)';
+	// cont.shadowOffsetX=4;
+	// cont.shadowOffsetY=4;
+	// cont.shadowColor='rgba('+Math.floor(Math.random()*254+1)+','+Math.floor(Math.random()*254+1)+','+Math.floor(Math.random()*254+1)+',0.8)';
+	// cont.shadowBlur=7.5;
+	for(var i=0;i<50;i++){
+		cont.translate(25,25);
+		cont.scale(0.85,0.85);
+		cont.rotate(Math.PI/10);
+		//create5Star(cont);
+		//cont.fill();
+
+
+	}
+} 
+
+function create5Star(cont){
+	var n=0;
+	var dx=100;
+	var dy=0;
+	var s=50;
+	cont.beginPath();
+	cont.translate(100,50);
+	//stars(cont);
+	var x=Math.sin(0);
+	var y=Math.cos(0);
+	var dig=Math.PI/5*4;
+	for(var i=0;i<5;i++){
+		var x=Math.sin(i*dig);
+		var y=Math.cos(i*dig);
+		cont.lineTo(dx+x*s,dy+y*s);
+
+	}
+	cont.closePath();
+	cont.clip();
+	
+
+}
+
+
+function colors(cont){
+	var colors=['red','orange','yellow','green','blue','navy','purple'];
+	cont.lineWidth=10;
+	cont.transform(1,0,0,1,100,0);
+	for(var i=0;i<colors.length;i++){
+		cont.transform(1,0,0,1,0,10);
+		cont.strokeStyle=colors[i];
+		cont.beginPath();
+		cont.arc(50,100,100,0,Math.PI,true);
+		cont.stroke();
+	}
+}
+//rect(cont);
+function rect(cont){
+	cont.strokeStyle='red';
+	cont.strokeRect(30,10,60,20);
+	var rad=45*Math.PI/180;
+	cont.setTransform(Math.cos(rad),Math.sin(rad),-Math.sin(rad),Math.cos(rad),0,0);
+	cont.strokeStyle='blue';
+	cont.strokeRect(30,10,60,20);
+	cont.setTransform(2.5,0,0,2.5,0,0);
+	cont.strokeStyle='green';
+	cont.strokeRect(30,10,60,20);
+	cont.setTransform(1,0,0,1,40,80);
+	cont.strokeStyle='gray';
+	cont.strokeRect(30,10,60,20);
+
+}
+
+//compositeOperation(cont);
+function compositeOperation(cont){
+	var oprtns=new Array('source-atop','source-in','source-out','source-over','destination-atop','destination-in','destination-out','destination-over','lighter','copy','xor');
+	var i=10;
+	cont.fillStyle='blue';
+	cont.fillRect(10,10,60,60);
+	cont.globalCompositeOperation=oprtns[i];
+	cont.beginPath();
+	cont.fillStyle='red';
+	cont.arc(60,60,30,0,Math.PI*2,false);
+	cont.fill();
+}
+img(cont);
+function img(cont){
+	var img=new Image();
+	
+	img.onload=function(){
+		// for(var k=0;k<4;k++){
+		// 	cont.drawImage(img,0+k*50,0+k*25,100,100);
+		// 	cont.drawImage(img,23,5,57,80,180,180,200,100);
+
+		// }
+		// var ptn=cont.createPattern(img,'repeat');
+		// cont.fillStyle=ptn;
+		// cont.fillRect(0,0,200,200);
+		 //create5Star(cont);
+		 cont.drawImage(img,20,10,200,100);
+		 var imgData=cont.getImageData(0,0,img.width,img.height);
+		 for(var j=0,n=imgData.data.length;j<n;j++){
+		 	imgData.data[j+0]=255-imgData.data[j+0];
+		 	imgData.data[j+1]=255-imgData.data[j+2];
+		 	imgData.data[j+2]=255-imgData.data[j+1];
+
+		 }
+		 cont.putImageData(imgData,100,50,0,0,250,150);
+
+
+	}
+	img.src='css/img/pic_login_plat.jpg';
+}
+
+
+
+	
+}
+
+</script>
+</body>
+</html>

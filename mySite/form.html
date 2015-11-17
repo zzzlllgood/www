@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>订单信息</title>
+<link rel="stylesheet" type="text/css" href="css/form.css">
+<style>
+header{font-weight: bold;color:white;background-color:#7088AD;}
+[id^=td_title]{color:#333;background-color:#e6e6e6;width:12%;text-align:right;padding-right: 5px;}
+[id^=td_content]{width:21%;height: 22px;background-color:#fafafa;padding-left:2px;}
+span{color:#ff0000;}
+input{width:95%;height:18px;border:1px solid #ccc;border-color:#426C7C #cccccc;}
+[id^=btnSearch]{background:#ddd;width:20px;color:white;}
+input:read-only{background: yellow;}
+input:-moz-read-only{background:yellow;}
+input#tbxNum{text-align:right;}
+input#tbxPrice{text-align:right;}
+input#tbxMoney{text-align:right;}
+#tbxGoodsCode{width:85%;}
+#tbxBrand,#tbxPerson,#tbxProduct{width:20px;}
+[id$=\Name]{width:60%;}
+div input[type="button"]{width:68px;height: 20px;cursor:pointer;border:none;background:#eee;}
+div table tr:nth-child(even){background-color:#e6e6e6;}
+div table th:nth-last-child(1){width:15%;}
+div table th:nth-last-child(2){width:15%;}
+
+
+</style>
+</head>
+<body>
+<section>
+	<header id="div_head_title_big">编辑订单信息</header>
+	<form id="form1" action="*">
+		<table>
+			<tbody>
+				<tr>
+					<td id="td_title_1"><span>*</span>订单编号</td>
+					<td id="td_content_1"><input type="required" name="tbxCode" id="tbxCode" maxlength="8"/></td>
+					<td id="td_title_2">订单日期</td>
+					<td id="td_content_2"><input type="date" name="tbxDate" id="tbxDate"/></td>
+					<td id="td_title_3">商品编号</td>
+					<td id="td_content_3">
+						<input type="required" name="tbxGoodsCode" id="tbxGoodsCode" maxlength="12">
+						<input type="button" name="btnSearchGoods" id="btnSearchGoods" value="..." onclick="btnSearchGoods_onClick();">
+					</td>
+				</tr>
+				<tr>
+					<td id="td_title_4"><span>*</span>商标</td>
+					<td id="td_content_4">
+						<input type="text" name="tbxBrand" id="tbxBrand" maxlength="3" onblur="tbxBrand_onblur()"/>
+						<input type="button" name="btnSearchbrand" id="btnSearchBrand" value="..." onclick="btnSearchBrand_onclick();"/>
+						<input type="text" name="tbxBrandName" id="tbxBrandName" readonly="readonly"/>
+					</td>
+					<td id="td_title_5">数量</td>
+					<td id="td_content_5"><input type="number" name="tbxNum" id="tbxNum" maxlength="6" value="0" onblur="tbxNum_onblur" onkeypress="Cancel_Input()"/></td>
+					<td id="td_title_6">单价</td>
+					<td id="td_content_6">
+						<input type="text" name="tbxPrice" id="tbxPrice" maxlength="6" value="0" onblur="tbxPrice_onblur()">
+					</td>
+				</tr>
+				<tr>
+					<td id="td_title_7">金额</td>
+					<td id="td_content_7"><input type="text" name="tbxMoney" id="tbxMoney" readonly="readonly" value="0"/></td>
+					<td id="td_title_8">负责人</td>
+					<td id="td_content_8">
+					<input type="text" name="tbxPerson" id="tbxPerson" maxlength="3" onblur="tbxPerson_onblur()" />
+					<input type="button" name="btnSearchPerson" id="btnSearchPerson" value="..." onclick="btnSearchPerson_onclick();"/>
+					<input type="text" name="tbxPersonName" id="tbxPersonName" readonly="readonly"/>
+					</td>
+					<td id="td_title_9">生产单位</td>
+					<td id="td_content_9">
+						<input type="text" name="tbxProduct" id="tbxProduct" maxlength="3" onblur="tbxProduct_onblur()"/>
+						<input type="button" name="btnSearchProduct" id="btnSearchProduct" value="..." onclick="btnSearchProduct_onclick();"/>
+						<input type="text" name="tbxProductName" id="tbxProductName" readonly="readonly"/>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="buttonDiv">
+			<input type="button" name="btnNew" id="btnNew" value="新增" onclick="btnNew_onclick()"/>
+			<input type="button" name="btnAdd" id="btnAdd" value="追加" onclick="btnAdd_onclick()"/>
+			<input type="button" name="btnUpdate" id="btnUpdate" value="修改" onclick="btnUpdate_onclick()"/>
+			<input type="button" name="btnDelete" id="btnDelete" value="删除" onclick="btnDelete_onclick()"/>
+			<input type="button" name="btnClear" id="btnClear" value="清除" onclick="btnClear_onclick()"/>
+		</div>
+		
+	</form>
+</section>
+<section>
+	<header>
+		<div id="infoTable">
+			<table id="datatable">
+				<thead>
+					<th>订单编号</th>
+					<th>订单日期</th>
+					<th>商品编号</th>
+					<th>商标</th>
+					<th>数量</th>
+					<th>单价</th>
+					<th>金额</th>
+					<th>负责人</th>
+					<th>生产单位</th>
+				</thead>
+			</table>
+			<input type="hidden" id="hiddenBrand">
+			<input type="hidden" id="hiddenPerson">
+			<input type="hidden" id="hiddenProduct">
+		</div>
+	</header>
+</section>
+<!-- <script type="text/javascript" src="../js/jquery-1.9.1.js"></script> -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+var data=new Object;
+var db=openDatabase('MyData','','My Database',102400);
+function init(){
+	datatable=document.getElementById('datatable');
+	showAllData(true);
+}
+function showAllData(loadPage){
+	db.transaction(function(tx){
+		//tx.executeSql('SELE');
+
+	});
+}
+
+
+</script>
+</body>
+</html>

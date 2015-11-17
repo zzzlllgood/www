@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+*{margin:0;padding:0;color:#36F;}
+.tab li.active a{color:#F00;} 
+.tab div{display:none;}
+.tab div.active{display:block;}
+
+.drag{width:100px;height:100px;background:#F90;}
+
+</style>
+</head>
+
+<body>
+<div class="tab" id="tab1">
+	<ul class="list tab-list">
+    	<li class="active"><a href="###">标题一</a></li>
+        <li><a href="###">标题二</a></li>
+        <li><a href="###">标题三</a></li>
+    </ul>
+	<div class="panel tab-panel active">aaaaaaaaaaaaaa</div>
+    <div class="panel tab-panel">bbbbbbbbbbbbbbbb</div>
+    <div class="panel tab-panel">cccccccccccccc</div>
+</div>
+
+<div class="drag" id="drag1"></div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/plugs.js"></script>
+<script type="text/javascript">
+
+var tab=new Tab();
+tab.init({owner:document.getElementById('tab1'),events:'click'});
+tab.autoPlay();
+
+var drag=new Drag();
+drag.init({owner:document.getElementById('#drag1')});
+
+
+
+
+
+</script>
+</body>
+</html>

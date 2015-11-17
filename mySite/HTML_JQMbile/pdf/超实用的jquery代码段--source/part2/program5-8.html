@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>test</title>
+</head>
+<body>
+<!--
+操作对象的DOM
+-->
+<form>
+<ul>
+<li><label>文字输入框</label><input type = "text"/></li>
+<li><label>密码输入框</label><input type = "password"/></li>
+<li><input type = "radio" name="rad1"/><label>单选按钮1</label></li>
+<li><input type = "radio" name="rad1"/><label>单选按钮2</label></li>
+<li><input type = "checkbox" /><label>多选按钮1</label></li>
+<li><input type = "checkbox" /><label>多选按钮2</label></li>
+<li><input type = "submit" value= "提交"/></li>
+<li><input type = "image" src= ""/></li>
+<li><input type = "reset"/></li>
+<li><input type = "button" value="测试按钮"/></li>
+<li><input type = "file" /></li>
+<li><input type = "hidden" value="test"/></li>
+<li><select><option>选项</option></select/></li>
+</ul>
+</form>
+<div id="msg"></div>
+</body>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+$(function(){
+	$("#msg").html(
+	"input元素有"+$(":input").length+"个(取得所有表单元素)<br/>"+
+	"text属性的元素有"+$(":text").length+"个(取得text属性的元素)<br/>"+
+	"password属性元素有"+$(":password").length+"个(取得password属性的元素)<br/>"+
+	"radio元素有"+$(":radio").length+"个(取得单选按钮元素)<br/>"+
+	"checkbox元素有"+$(":checkbox").length+"个(取得多选按钮元素)<br/>"+
+	"submit或image属性元素有"+$(":submit").length+"个(取得submit属性或image属性的元素)<br/>"+
+	"image属性元素有"+$(":image").length+"个(取得image属性的元素)<br/>"+
+	"reset属性元素有"+$(":reset").length+"个(取得reset属性的元素)<br/>"+
+	"button属性元素有"+$(":button").length+"个(取得button属性的元素或button标签)<br/>"+
+	"file属性元素有"+$(":file").length+"个(取得file属性的元素)<br/>"+
+	"hidden属性元素有"+$("input:hidden").length+"个(取得hidden属性的表单元素)"
+    );
+});
+</script>
+</html>
+

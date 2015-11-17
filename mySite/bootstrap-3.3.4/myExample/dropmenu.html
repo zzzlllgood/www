@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>下拉菜单</title>
+<link type="text/css" rel="stylesheet" href="dropmenu/css/bootstrap.css">
+</head>
+
+<body>
+<div class="dropdown" id="dropdown1">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li class="disabled"><a href="#">Disabled link</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+---------------------------------------------------------------
+<div class="dropup">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropup
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+---------------------------------------------------------------------
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li class="disabled"><a href="#">Disabled link</a></li>
+    <li role="separator" class="divider"></li>
+    <li class="dropdown">
+       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="disabled"><a href="#">Disabled link</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    
+    </li>
+  </ul>
+</div>
+<script type="text/javascript" src="common/js/jquery2.0.3.js"></script>
+<script type="text/javascript" src="dropmenu/js/bootstrap.js"></script>
+<script type="text/javascript">
+  $('#dropdown1').on('show.bs.dropdown', function () {
+    console.log(1);
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<style type="text/css">
+.aside{background:#F60; position:relative;float:left;}
+.container{background:#3CF;height:100%; position:relative;}
+.resizeBar{position:absolute;width:0;height:100%;font-size:0;border:1px solid green;right:0;top:0; cursor:ew-resize;}
+.mark{position:absolute;width:100%;height:100%;left:0;top:0;opacity:0;filter:alpha(opacity=0);background:#03F; display:none; z-index:9999;}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="aside" id="aside">aside
+    	<div class="resizeBar" id="resizeBar"></div>
+    </div>
+    <div class="container" id="container">
+    	<iframe src="http://192.168.112.194:8081/km/genalKnowLedgeCollAction.do?method=searchbylist&repositoryId=1000" name="pageframe" id="pageframe" frameborder="0" height="100%" width="100%" scrolling="no" allowtransparency="true"></iframe>
+        <div class="mark" id="mask"></div>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script> 
+<script type="text/javascript">
+
+jQuery(function($){
+doResize();
+function doResize(){
+	var clickX, leftOffset;
+	var dragging= false;
+	var $wrap=$("#aside");
+	var $container=$("#container");
+	var $mask=$("#mask");
+	var $resizeBar= $wrap.find('#resizeBar');
+	var doc= document;  //||$resizeBar[0].documentElement||$resizeBar[0].ownerDocument
+
+	$resizeBar.on('mousedown',function(e){
+		dragging   = true;
+		leftOffset = $wrap.offset().left;
+		doc.body.style.cursor='ew-resize';  
+		$mask.hide();
+		$mask.show();
+		doc.onmousemove=function(e){
+			var e=e||window.event;
+			if (dragging) {
+				doc.body.style.cursor='ew-resize'; 
+				clickX =e.pageX||e.clientX;
+				var iTarget=clickX-leftOffset>20?clickX-leftOffset:20;
+				if(iTarget>=$wrap.parent().width())iTarget=$wrap.parent().width()-20;
+				
+				
+				$container.css({'marginLeft':iTarget+2});
+				$wrap.css({'width': iTarget});
+				
+			};
+			//console.log(!(window.event.button==0||ev.button==1));
+			//console.log(e.button==0);
+			//console.log(e.button==1);
+			//setTimeout(function(){
+//				if(parseFloat($wrap.css('width'))==iTarget&&(e.button==0||e.button==1)){
+//					$(doc).trigger('mouseup');
+//				}
+//				
+//			},800);
+			return false;
+		};
+		doc.onmouseup=function(){console.log(1);
+			dragging = false;
+			doc.body.style.cursor='default'; 
+			doc.onmousemove = null;
+			doc.onmouseup = null;
+			$mask.hide();
+			
+		};
+		e.preventDefault();
+	});
+	
+
+}
+});
+
+</script>
+</body>
+</html>

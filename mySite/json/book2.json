@@ -1,0 +1,758 @@
+{
+    "opensearch:totalResults": {
+        "$t": "193"
+    },
+    "opensearch:startIndex": {
+        "$t": "1"
+    },
+    "opensearch:itemsPerPage": {
+        "$t": "10"
+    },
+    "entry": [{
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "Earle Castledine"
+            }
+        },
+        {
+            "name": {
+                "$t": "Craig Sharkie"
+            }
+        }],
+        "title": {
+            "$t": "jQuery"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/4312737"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/4312737\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img4.douban.com\/spic\/s9102877.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/4312737\/"
+        }],
+        "db:attribute": [{
+            "$t": "0980576857",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9780980576856",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "Earle Castledine",
+            "@name": "author"
+        },
+        {
+            "$t": "Craig Sharkie",
+            "@name": "author"
+        },
+        {
+            "$t": "USD 39.95",
+            "@name": "price"
+        },
+        {
+            "$t": "SitePoint",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2010-02-28",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/4312737"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 38,
+            "@average": "8.7",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "单东林"
+            }
+        },
+        {
+            "name": {
+                "$t": "张晓菲"
+            }
+        },
+        {
+            "name": {
+                "$t": "魏然"
+            }
+        }],
+        "title": {
+            "$t": "锋利的jQuery"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/3794471"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/3794471\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img4.douban.com\/spic\/s10170467.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/3794471\/"
+        }],
+        "db:attribute": [{
+            "$t": "7115207011",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787115207012",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "单东林",
+            "@name": "author"
+        },
+        {
+            "$t": "张晓菲",
+            "@name": "author"
+        },
+        {
+            "$t": "魏然",
+            "@name": "author"
+        },
+        {
+            "$t": "39.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "人民邮电出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2009-6",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/3794471"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 611,
+            "@average": "8.1",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "Bear Bibeault"
+            }
+        },
+        {
+            "name": {
+                "$t": "Yehuda Katz"
+            }
+        }],
+        "title": {
+            "$t": "jQuery实战"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/3446112"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/3446112\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s3574953.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/3446112\/"
+        }],
+        "db:attribute": [{
+            "$t": "7115195994",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787115195999",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "陈宁",
+            "@name": "translator"
+        },
+        {
+            "$t": "Bear Bibeault",
+            "@name": "author"
+        },
+        {
+            "$t": "Yehuda Katz",
+            "@name": "author"
+        },
+        {
+            "$t": "49.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "人民邮电出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2009.1",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/3446112"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 285,
+            "@average": "8.1",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "Karl Swedberg"
+            }
+        },
+        {
+            "name": {
+                "$t": "Jonathan Chaffer"
+            }
+        }],
+        "title": {
+            "$t": "jQuery基础教程"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/3082293"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/3082293\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s3103223.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/3082293\/"
+        }],
+        "db:attribute": [{
+            "$t": "7115181101",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787115181107",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "李松峰",
+            "@name": "translator"
+        },
+        {
+            "$t": "李炜",
+            "@name": "translator"
+        },
+        {
+            "$t": "Karl Swedberg",
+            "@name": "author"
+        },
+        {
+            "$t": "Jonathan Chaffer",
+            "@name": "author"
+        },
+        {
+            "$t": "45.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "人民邮电出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2008-7",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/3082293"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 254,
+            "@average": "7.8",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "单东林"
+            }
+        },
+        {
+            "name": {
+                "$t": "张晓菲"
+            }
+        },
+        {
+            "name": {
+                "$t": "魏然"
+            }
+        }],
+        "title": {
+            "$t": "锋利的jQuery"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/10792216"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/10792216\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img4.douban.com\/spic\/s28026858.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/10792216\/"
+        }],
+        "db:attribute": [{
+            "$t": "7115281602",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787115281609",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "单东林",
+            "@name": "author"
+        },
+        {
+            "$t": "张晓菲",
+            "@name": "author"
+        },
+        {
+            "$t": "魏然",
+            "@name": "author"
+        },
+        {
+            "$t": "49.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "人民邮电出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2012-7-1",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/10792216"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 196,
+            "@average": "8.6",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "Jonathan Chaffer"
+            }
+        },
+        {
+            "name": {
+                "$t": "Karl Swedberg"
+            }
+        }],
+        "title": {
+            "$t": "jQuery基础教程"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/4111399"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/4111399\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s24398905.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/4111399\/"
+        }],
+        "db:attribute": [{
+            "$t": "7115215421",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787115215420",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "李松峰",
+            "@name": "translator"
+        },
+        {
+            "$t": "卢玉平",
+            "@name": "translator"
+        },
+        {
+            "$t": "Jonathan Chaffer",
+            "@name": "author"
+        },
+        {
+            "$t": "Karl Swedberg",
+            "@name": "author"
+        },
+        {
+            "$t": "49.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "人民邮电出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2009-11",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/4111399"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 144,
+            "@average": "8.2",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "[美] Jonathan Chaffer"
+            }
+        },
+        {
+            "name": {
+                "$t": "[美] Karl Swedberg"
+            }
+        }],
+        "title": {
+            "$t": "jQuery基础教程（第3版）"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/10569608"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/10569608\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img4.douban.com\/spic\/s8995408.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/10569608\/"
+        }],
+        "db:attribute": [{
+            "$t": "7115275858",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787115275851",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "李松峰",
+            "@name": "translator"
+        },
+        {
+            "$t": "[美] Jonathan Chaffer",
+            "@name": "author"
+        },
+        {
+            "$t": "[美] Karl Swedberg",
+            "@name": "author"
+        },
+        {
+            "$t": "59.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "人民邮电出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2012-4",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/10569608"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 83,
+            "@average": "8.4",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "Bear Bibeault"
+            }
+        },
+        {
+            "name": {
+                "$t": "Yehuda Katz"
+            }
+        }],
+        "title": {
+            "$t": "jQuery in Action"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/2368647"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/2368647\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img4.douban.com\/spic\/s4174499.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/2368647\/"
+        }],
+        "db:attribute": [{
+            "$t": "1933988355",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9781933988351",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "Bear Bibeault",
+            "@name": "author"
+        },
+        {
+            "$t": "Yehuda Katz",
+            "@name": "author"
+        },
+        {
+            "$t": "USD 39.99",
+            "@name": "price"
+        },
+        {
+            "$t": "Manning Publications",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2008-2-17",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/2368647"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 99,
+            "@average": "8.0",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "陶国荣"
+            }
+        }],
+        "title": {
+            "$t": "jQuery权威指南"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/5415955"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/5415955\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img4.douban.com\/spic\/s4577296.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/5415955\/"
+        }],
+        "db:attribute": [{
+            "$t": "7111325435",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787111325437",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "陶国荣",
+            "@name": "author"
+        },
+        {
+            "$t": "59.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "机械工业出版社华章公司",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2011-1-10",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/5415955"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 90,
+            "@average": "6.9",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "高云"
+            }
+        }],
+        "title": {
+            "$t": "jQuery 技术内幕"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/25823709"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/25823709\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s27215132.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/25823709\/"
+        }],
+        "db:attribute": [{
+            "$t": "711144082X",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787111440826",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "高云",
+            "@name": "author"
+        },
+        {
+            "$t": "99元",
+            "@name": "price"
+        },
+        {
+            "$t": "机械工业出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2014-1-1",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/25823709"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 23,
+            "@average": "7.9",
+            "@max": 10
+        }
+    }],
+    "title": {
+        "$t": "搜索 jQuery 的结果"
+    }
+}

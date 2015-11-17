@@ -1,0 +1,6 @@
+@charset"utf-8";
+.normal span{display:inline;}
+.normal input.txt,.normal textarea{display:none;}
+.edit span{display:none;}
+.edit input.txt,.edit textarea{display:inline-block;}
+

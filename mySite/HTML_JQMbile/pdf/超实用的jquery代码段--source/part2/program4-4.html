@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>test</title>
+</head>
+<body>
+<!--操作对象的DOM-->
+<div id="testClick">点击此处</div>
+<div id="test">在此显示新内容</div>
+</body>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+//DOM准备好了后，执行function内的内容
+jQuery(function($){
+	//ID为testClick的元素被点击后执行的函数
+	$("#testClick").click(function(){
+		//在ID为test的元素中显示[欢迎您！]
+		$("#test").html("欢迎您！");
+
+	});
+});
+
+</script>
+
+</html>
+

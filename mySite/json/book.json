@@ -1,0 +1,716 @@
+{
+    "opensearch:totalResults": {
+        "$t": "1173"
+    },
+    "opensearch:startIndex": {
+        "$t": "1"
+    },
+    "opensearch:itemsPerPage": {
+        "$t": "10"
+    },
+    "entry": [{
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "克罗克福特"
+            }
+        }],
+        "title": {
+            "$t": "JavaScript"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/3332698"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/3332698\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s3400022.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/3332698\/"
+        }],
+        "db:attribute": [{
+            "$t": "7564114479",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787564114473",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "克罗克福特",
+            "@name": "author"
+        },
+        {
+            "$t": "28.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "东南大学出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2009-1",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/3332698"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 49,
+            "@average": "9.1",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "Douglas Crockford"
+            }
+        }],
+        "title": {
+            "$t": "JavaScript语言精粹"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/3590768"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/3590768\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s3651235.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/3590768\/"
+        }],
+        "db:attribute": [{
+            "$t": "7121084376",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787121084379",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "赵泽欣",
+            "@name": "translator"
+        },
+        {
+            "$t": "鄢学鹍",
+            "@name": "translator"
+        },
+        {
+            "$t": "Douglas Crockford",
+            "@name": "author"
+        },
+        {
+            "$t": "35.00",
+            "@name": "price"
+        },
+        {
+            "$t": "电子工业出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2009年",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/3590768"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 1118,
+            "@average": "9.1",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "Jeremy Keith"
+            }
+        }],
+        "title": {
+            "$t": "JavaScript DOM编程艺术"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/1921890"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/1921890\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s1958902.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/1921890\/"
+        }],
+        "db:attribute": [{
+            "$t": "7115139210",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787115139214",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "杨涛",
+            "@name": "translator"
+        },
+        {
+            "$t": "王建桥",
+            "@name": "translator"
+        },
+        {
+            "$t": "杨晓云",
+            "@name": "translator"
+        },
+        {
+            "$t": "Jeremy Keith",
+            "@name": "author"
+        },
+        {
+            "$t": "39.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "人民邮电出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2006年12月",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/1921890"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 975,
+            "@average": "8.7",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "Nicholas C. Zakas"
+            }
+        }],
+        "title": {
+            "$t": "JavaScript高级程序设计"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/1869705"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/1869705\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img4.douban.com\/spic\/s1888787.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/1869705\/"
+        }],
+        "db:attribute": [{
+            "$t": "7115152098",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787115152091",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "曹力",
+            "@name": "translator"
+        },
+        {
+            "$t": "张欣",
+            "@name": "translator"
+        },
+        {
+            "$t": "Nicholas C. Zakas",
+            "@name": "author"
+        },
+        {
+            "$t": "59.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "人民邮电出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2006年9月",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/1869705"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 949,
+            "@average": "8.6",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "David Flanagan"
+            }
+        }],
+        "title": {
+            "$t": "JavaScript 权威指南"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/1232061"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/1232061\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s1504052.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/1232061\/"
+        }],
+        "db:attribute": [{
+            "$t": "7111110919",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787111110910",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "张铭泽",
+            "@name": "translator"
+        },
+        {
+            "$t": "等",
+            "@name": "translator"
+        },
+        {
+            "$t": "David Flanagan",
+            "@name": "author"
+        },
+        {
+            "$t": "99.00",
+            "@name": "price"
+        },
+        {
+            "$t": "机械工业出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2003-1-1",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/1232061"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 667,
+            "@average": "8.7",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "[美] Nicholas C. Zakas"
+            }
+        }],
+        "title": {
+            "$t": "JavaScript高级程序设计（第3版）"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/10546125"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/10546125\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s8958650.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/10546125\/"
+        }],
+        "db:attribute": [{
+            "$t": "7115275793",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787115275790",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "李松峰",
+            "@name": "translator"
+        },
+        {
+            "$t": "曹　力",
+            "@name": "translator"
+        },
+        {
+            "$t": "[美] Nicholas C. Zakas",
+            "@name": "author"
+        },
+        {
+            "$t": "99.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "人民邮电出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2012-3-29",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/10546125"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 592,
+            "@average": "9.3",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "弗拉纳根"
+            }
+        }],
+        "title": {
+            "$t": "JavaScript权威指南"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/2228378"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/2228378\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s5860151.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/2228378\/"
+        }],
+        "db:attribute": [{
+            "$t": "7111216326",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787111216322",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "李强",
+            "@name": "translator"
+        },
+        {
+            "$t": "弗拉纳根",
+            "@name": "author"
+        },
+        {
+            "$t": "109.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "机械工业",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2007-8",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/2228378"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 601,
+            "@average": "8.9",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "麦卡劳(Alex MacCaw)"
+            }
+        }],
+        "title": {
+            "$t": "基于MVC的JavaScript Web富应用开发"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/10733304"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/10733304\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img4.douban.com\/spic\/s27269298.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/10733304\/"
+        }],
+        "db:attribute": [{
+            "$t": "7121109565",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787121109560",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "李晶",
+            "@name": "translator"
+        },
+        {
+            "$t": "张散集",
+            "@name": "translator"
+        },
+        {
+            "$t": "麦卡劳(Alex MacCaw)",
+            "@name": "author"
+        },
+        {
+            "$t": "59.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "电子工业出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2012-5",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/10733304"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 295,
+            "@average": "8.4",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "Nicholas C.Zakas"
+            }
+        }],
+        "title": {
+            "$t": "高性能JavaScript"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/5362856"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/5362856\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s6245861.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/5362856\/"
+        }],
+        "db:attribute": [{
+            "$t": "7121119323",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787121119323",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "丁琛",
+            "@name": "translator"
+        },
+        {
+            "$t": "赵泽欣",
+            "@name": "translator"
+        },
+        {
+            "$t": "Nicholas C.Zakas",
+            "@name": "author"
+        },
+        {
+            "$t": "49.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "电子工业出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2010-11",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/5362856"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 329,
+            "@average": "9.0",
+            "@max": 10
+        }
+    },
+    {
+        "category": {
+            "@scheme": "http:\/\/www.douban.com\/2007#kind",
+            "@term": "http:\/\/www.douban.com\/2007#book"
+        },
+        "author": [{
+            "name": {
+                "$t": "John Resig"
+            }
+        }],
+        "title": {
+            "$t": "精通JavaScript"
+        },
+        "link": [{
+            "@rel": "self",
+            "@href": "http:\/\/api.douban.com\/book\/subject\/3007076"
+        },
+        {
+            "@rel": "alternate",
+            "@href": "http:\/\/book.douban.com\/subject\/3007076\/"
+        },
+        {
+            "@rel": "image",
+            "@href": "http:\/\/img3.douban.com\/spic\/s25000520.jpg"
+        },
+        {
+            "@rel": "mobile",
+            "@href": "http:\/\/m.douban.com\/book\/subject\/3007076\/"
+        }],
+        "db:attribute": [{
+            "$t": "7115175403",
+            "@name": "isbn10"
+        },
+        {
+            "$t": "9787115175403",
+            "@name": "isbn13"
+        },
+        {
+            "$t": "江疆",
+            "@name": "translator"
+        },
+        {
+            "$t": "陈贤安",
+            "@name": "translator"
+        },
+        {
+            "$t": "John Resig",
+            "@name": "author"
+        },
+        {
+            "$t": "49.00元",
+            "@name": "price"
+        },
+        {
+            "$t": "人民邮电出版社",
+            "@name": "publisher"
+        },
+        {
+            "$t": "2008-4-1",
+            "@name": "pubdate"
+        }],
+        "id": {
+            "$t": "http:\/\/api.douban.com\/book\/subject\/3007076"
+        },
+        "gd:rating": {
+            "@min": 0,
+            "@numRaters": 388,
+            "@average": "8.6",
+            "@max": 10
+        }
+    }],
+    "title": {
+        "$t": "搜索 javascript 的结果"
+    }
+}

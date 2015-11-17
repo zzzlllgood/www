@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>自适应宽度的页面</title>
+<link href="js/css/jquery.mobile-1.4.5.min.css" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
+<div data-role="page" id="navPage">
+	<div data-role="header">
+    	<h1>第一页</h1>
+    </div>
+    <div data-role="content">
+    	<ul data-role="listview">
+        	<li><a href="#page2" data-transition="fade">第二页：对话框效果==淡入==按钮</a></li>
+            <li><a href="#page3" data-transition="flip">第三页:翻页==折叠</a></li>
+            <li><a href="#page4" data-transition="flow">第四页:抛转==折叠表单</a></li>
+            <li><a href="#page4" data-transition="pop">第四页:弹出</a></li>
+            <li><a href="#page4" data-transition="slide">第四页:滑动</a></li>
+            <li><a href="#page4" data-transition="slidefade">第四页:左滑动淡入</a></li>
+            <li><a href="#page4" data-transition="slideup">第四页:上滑动</a></li>
+            <li><a href="#page4" data-transition="slidedown">第四页:下滑动</a></li>
+            <li><a href="#page4" data-transition="turn">第四页:翻转</a></li>
+            <li><a href="#page4" data-transition="none">第四页:无转场效果</a></li>
+            <li><a href="page5.html" data-prefetch="true">第五页：加载外部文件==预加载</a></li>
+            <li><a href="page6.html">第六页：加载外部文件==手风琴</a></li>
+            <li><a href="page7.html">第七页：加载外部文件==九宫格==动态显示页眉页脚</a></li>
+            <li><a href="page8.html">第八页：加载外部文件==简单手机相册</a></li>
+            <li><a href="page9.html">第九页：加载外部文件==分割</a></li>
+            <li>
+                <ol>
+                	<li><a href="#page2" data-transition="fade">嵌套1</a></li>
+                    <li><a href="#page2" data-transition="fade">嵌套2</a></li>
+                </ol>
+            
+            </li>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+    	<h1>页脚备注</h1>  
+    </div>
+</div>
+<div data-role="page" id="page2">
+	<div data-role="header">
+    	<h1>第二页：对话框效果</h1>
+    </div>
+    <div data-role="content">
+    	<ul data-role="listview">
+            <li><a href="#navPage">转到导航页</a></li>
+            <li><a href="#page2-dialog" data-rel="dialog">弹出一个对话框效果</a></li>
+            <li>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a href="#page2-dialog" data-rel="page" data-role="button" class="slideup">弹出一个对话框效果</a>
+                        <a href="#page2-dialog" data-rel="page" data-role="button" class="slidedown">弹出一个对话框效果</a>
+                        <a href="#page2-dialog" data-rel="page" data-role="button" class="slideup">弹出一个对话框效果</a>
+                        <a href="#page2-dialog" data-rel="page" data-role="button" class="slidedown">弹出一个对话框效果</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a href="#page2-dialog" data-rel="page" data-role="button" class="slideup">弹出一个对话框效果</a>
+                        <a href="#page2-dialog" data-rel="page" data-role="button" class="slidedown">弹出一个对话框效果</a>
+                        <a href="#page2-dialog" data-rel="page" data-role="button" class="slideup">弹出一个对话框效果</a>
+                        <a href="#page2-dialog" data-rel="page" data-role="button" class="slidedown">弹出一个对话框效果</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        
+    </div>
+    <div data-role="footer" data-position="fixed">
+    	<h1>页脚备注</h1>  
+    </div>
+</div>
+<div data-role="page" id="page3">
+	<div data-role="header">
+    	<h1><a href="#navPage">转到导航页</a>第三页</h1>
+    </div>
+    <div data-role="content">
+        <div data-role="collapsible" data-theme="a">
+            <h4>文学历史</h4>
+            <ul data-role="listview">
+                <li><a href="###">明代</a></li>
+                <li><a href="###">清代</a></li>
+            </ul>
+        </div>
+        <div data-role="collapsible" data-theme="a">
+            <h4>人文社科</h4>
+            <ul data-role="listview">
+                <li><a href="###">财务</a></li>
+                <li><a href="###">心理</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+    	<h1>页脚备注</h1>  
+    </div>
+</div>
+<div data-role="page" id="page4">
+	<div data-role="header">
+    	<h1><a href="#navPage">转到导航页</a>第四页</h1>
+    </div>
+    <div data-role="content">
+    	<form method="post" action="demoform.php">
+        	<fieldset data-role="collapsible" data-collapsible-icon="arrow-d" data-expanded-icon="arrow-u" data-mini="true">
+            	<legend>
+                	<label for="name">全名：</label>
+                    <input type="text" name="text" id="name"/>
+                </legend>
+                <p>喜欢的颜色：</p>
+                <div data-role="controlgroup">
+                	<label for="red">红色</label>
+                    <input type="checkbox" name="favcolor" id="red" value="red"/>
+                    <label for="green">绿色</label>
+                    <input type="checkbox" name="favcolor" id="green" value="green"/>
+                    <label for="blue">蓝色</label>
+                    <input type="checkbox" name="favcolor" id="blue" value="blue"/>
+                </div>
+                <input type="submit" data-inline="true" value="提交"/>
+            
+            </fieldset>
+        </form>
+    </div>
+    <div data-role="footer" data-position="fixed">
+    	<h1>页脚备注</h1>  
+    </div>
+</div>
+<div data-role="page" id="page2-dialog">
+	<div data-role="header">
+    	<h1>第二页的对话框</h1>
+    </div>
+    <div data-role="content">
+    	<ul data-role="listview">
+            <li><a href="#page2">转到第二页</a></li>
+        </ul>
+        
+    	
+    </div>
+    <div data-role="footer" data-position="fixed">
+    	<h1>页脚备注</h1>  
+    </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.custom.js"></script>
+<script type="text/javascript">
+$(document).bind("pageinit",function(){
+	$.mobile.page.prototype.options.backBtnText="返回";
+	$.mobile.page.prototype.options.addBackBtn=true;
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>第九页：分割</title>
+<link href="js/css/jquery.mobile-1.4.5.min.css" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
+<div data-role="page" id="page8" data-add-back-btn="true">
+	<div data-role="header" data-fullscreen="true">
+    	<h1><a href="main.html">转到导航页</a>第九页</h1>
+        <div data-role="navbar">
+        	<ul>
+            	<li><a href="###" data-icon="home" class="ui-btn-active ui-state-persit">首页</a></li>
+                <li><a href="###" data-icon="grid">十二宫格</a></li>
+                <li><a href="###" data-icon="search">搜索</a></li>
+                <li><a href="###" data-icon="info">帮助信息</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="content" data-theme="a">
+        <p>简单手机相册</p>
+        <ul data-role="listview" data-inset="true" data-filter="true" data-split-icon="gear">
+        	<li>
+                <a href="#painting1">
+                    <img src="images/1.jpg" width="100"/>
+                    <h2>杜鹃花开</h2>
+                    <p>这是一幅不错的国画，居右浓郁的中华文化色彩，很多人比较喜欢。</p>
+                </a>
+                <a href="###" data-rel="dialog" data-transition="slideup">
+                    2011年作品
+                </a>
+            </li>
+            <li>
+                <a href="#painting2">
+                    <img src="images/2.jpg" width="100"/>
+                    <h2>杜鹃花开</h2>
+                    <p>这是一幅不错的国画，居右浓郁的中华文化色彩，很多人比较喜欢。</p>
+                </a>
+            </li>
+            <li data-role="list-divider">
+                <a href="#painting2">分割列表项</a>
+            </li>
+            <li>
+                <a href="#painting3">
+                    <img src="images/3.jpg" class="ul-li-icon"/>
+                    <span class="ul-li-count">3</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed" data-fullscreen="true">
+    	<div data-role="navbar">
+        <ul>
+        	<li><a href="###" data-icon="plus">更多</a></li>
+            <li><a href="###" data-icon="minus">更少</a></li>
+            <li><a href="###" data-icon="delete">删除</a></li>
+            <li><a href="###" data-icon="check">喜爱</a></li>
+            <li><a href="###" data-icon="info">信息</a></li>
+        </ul>
+        </div>
+    	<h1>页脚备注</h1>  
+    </div>
+</div>
+<div data-role="page" id="painting1">
+	<div data-role="header" data-fullscreen="true">
+    	<a href="#page8">转到导航页</a>
+        <h1>杜鹃花开</h1>
+    </div>
+	<img src="images/1.jpg" width="1920" height="1080" alt="杜鹃花开"/>
+</div>
+<div data-role="page" id="painting2">
+	<div data-role="header" data-fullscreen="true">
+    	<a href="#page8">转到导航页</a>
+        <h1>杜鹃花开</h1>
+    </div>
+	<img src="images/2.jpg" width="1024" height="886" alt="杜鹃花开"/>
+</div>
+<div data-role="page" id="painting3">
+	<div data-role="header" data-fullscreen="true">
+    	<a href="#page8">转到导航页</a>
+        <h1>杜鹃花开</h1>
+    </div>
+	<img src="images/3.jpg" width="450" height="300" alt="杜鹃花开"/>
+</div>
+
+
+
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.custom.js"></script>
+<script type="text/javascript">
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<!--<html ng-app="myApp">-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>angular</title>
+<style type="text/css">
+.active1{background:red;}
+.active2{background:blue;}	
+
+</style>
+<script src="js/angular.min130.js"></script>
+<script type="text/javascript">
+//function Aaa($scope,$rootScope){
+//	$scope.name='hello';
+//	$scope.age='10';
+//	$rootScope.age='30';
+//	$scope.show=function(){
+//		$scope.name='hi';
+//	};
+//	$scope.iphone={
+//		money:10,
+//		num:1,
+//		fre:10,
+//	};
+//	$scope.iphone.sum=function(){
+//		return $scope.iphone.money*$scope.iphone.num;
+//	};
+//	$scope.$watch('iphone.money',function(newVal,oldVal){
+//			console.log(newVal);
+//			console.log(oldVal);
+//		},true);
+//	$scope.$watch($scope.iphone.sum,function(newVal,oldVal){
+//			console.log(newVal);
+//			console.log(oldVal);
+//			$scope.iphone.fre=newVal>=100?0:10;
+//		});
+//	
+//	
+//}
+//function Bbb($scope){
+//	$scope.name='hi';
+//	$scope.age='20';
+//	//alert(222);
+//}
+
+var a={name:'hello'};
+var b={age:20};
+//var c=angular.extend(b,a);
+var c=angular.copy(b,a);
+console.log(a);
+console.log(b);
+console.log(c);
+
+
+var m1=angular.module('myApp',[]);
+m1.controller('Aaa',['$scope','$rootScope',function($scope,$rootScope,$timeout){
+	$scope.name='hello';
+	$scope.age='10';
+	$rootScope.age='30';
+	$scope.iphones='apples-a';
+	$scope.show=function(){
+		$scope.name='hi';
+	};
+	$scope.iphone={
+		money:10,
+		num:1,
+		fre:10
+	};
+	$scope.iphone.sum=function(){
+		return $scope.iphone.money*$scope.iphone.num;
+	};
+	$scope.$watch('iphone.money',function(newVal,oldVal){
+			console.log(newVal);
+			console.log(oldVal);
+		},true);
+	$scope.$watch($scope.iphone.sum,function(newVal,oldVal){
+			console.log(newVal);
+			console.log(oldVal);
+			$scope.iphone.fre=newVal>=100?0:10;
+		});
+}]);
+m1.filter('firstUpper',function(){
+	return function(str,num){
+		return str.charAt(0).toUpperCase()+str.substring(1);	
+	}
+	
+});
+m1.controller('Bbb',['$scope','$timeout','$filter','$interval',function($scope,$timeout,$filter,$interval){
+	$scope.name='hi';
+	$scope.age='20';
+	$scope.iphones='apples-b';
+	//$timeout(function(){$scope.name='Xiaoming'},2000);
+	setTimeout(function(){$scope.$apply(function(){$scope.name='xiaoming'});},2000);
+	$scope.show=function(){
+		$scope.name='hanmeimei';
+	};
+	$scope.name=$filter('firstUpper')('lily');
+	$scope.name = $filter('uppercase')('hello');
+	console.log($scope.name);
+	$scope.name = $filter('number')('236478234.3647348',1);
+	console.log($scope.name);
+	$scope.name = $filter('date')('236478234','hh');
+	console.log($scope.name);
+	var iNow=5;
+	$scope.text=iNow+'秒';
+	$scope.isDisabled=true;
+	var timer=$interval(function(){
+		iNow--;
+		$scope.text=iNow+'秒';
+		if(iNow==0){
+			$interval.cancel(timer);
+			$scope.text='可以点击';
+			$scope.isDisabled=false;
+		}
+		
+	},1000);
+	//alert(222);
+	
+}]);
+m1.controller('Ccc',['$scope','$filter',function($scope,$filter){
+	$scope.datas=['aaa','bbb','ccc'];
+	var orgLists=[
+		{name:'Tom',age:'200'},
+		{name:'Dom',age:'240'},
+		{name:'Com',age:'260'},
+		{name:'Yom',age:'100'},
+	];
+	
+	$scope.dataLists=orgLists;
+	$scope.fnSort=function(arg){
+		arguments.callee['fnsort'+arg]=!arguments.callee['fnsort'+arg];
+		$scope.dataLists=$filter('orderby')($scope.dataLists,arg,arguments.callee['fnsort'+arg]);
+	};
+	$scope.fnFilter=function(){
+		$scope.dataLists=$filter('filter')(orgLists,$scope.filterVal);
+		
+	};
+	console.log($scope.bbb+'===bbbbbbbbbbbbbbbbb');
+	
+}]);
+
+
+console.log(name+'======');
+
+var m2=angular.module('myApp2',[]);
+m2.controller('Ccc',['$scope',function($scope){
+	$scope.age='20';
+	$scope.iphones='apples2';
+}]);
+
+console.log(angular.version+"==1");
+var a=NaN;
+var b=NaN;
+console.log(angular.equals(a,b)+"==2");
+
+var values=['a','b','c'];
+var values={'name':'Tom','age':'20'};
+var result=[];
+angular.forEach(values,function(value,i){   //i==key
+	console.log(value+'==5');
+	console.log(i+'==6');
+	this.push(value+'='+i);
+	
+},result);
+console.log(result);
+//JSON.parse()  JSON.stringify()
+/*var str='{"name":"Tom","age":"30"}';
+var json=angular.fromJson(str);
+console.log(json);*/
+var json={"name":"Tom","age":"30"};
+var str=angular.toJson(json,true);
+console.log(str);
+
+var str='hello';
+console.log(angular.identity(str));
+/*function identity(str){
+	return str;
+}*/
+console.log(angular.noop());
+console.log(angular.uppercase('hello'));
+
+
+window.onload=function(){
+	var a=[];
+	console.log(angular.isElement(a)+"==3");
+	console.log(angular.isElement(document.body)+"==4");
+	angular.element(document.body).css('background','#dfdfdf');
+	document.onclick=function(){
+		var aDiv=document.getElementsByTagName('div');
+		angular.bootstrap(aDiv[0],['myApp']);
+		angular.bootstrap(aDiv[2],['myApp']);
+		angular.bootstrap(aDiv[3],['myApp2']);
+		//angular.bootstrap(aDiv[4],['myApp']);
+	}
+	
+}
+
+</script>
+</head>
+
+<body>
+<div ng-controller="Aaa" id="div1">
+	<p>{{name}}</p>
+    <p>{{age}}</p>
+    <p><button type="button" id="btn">按钮</button></p>
+    <p><input type="text" ng-model="name"/></p>
+    <p>价格：<input type="text" ng-model="iphone.money"/></p>
+    <p>个数：<input type="text" ng-model="iphone.num"/></p>
+    <p>费用：{{iphone.sum() | currency:"￥"}}</p>
+    <p>运费：{{iphone.fre | currency:"￥"}}</p>
+    <p>总额：{{iphone.sum()+iphone.fre | currency:"￥"}}</p>
+    <p>{{iphones}}</p>
+    <div ng-controller="Bbb" ng-click="show()">
+    	<p>{{name}}</p>
+    	<p>{{age}}</p>
+        <p>{{iphones}}</p>
+    </div>
+</div>
+<div ng-controller="Bbb">
+    <p>{{age}}</p>
+    <p>{{iphones}}</p>
+    <input type="button" ng-value="text" ng-disabled="isDisabled">
+    <input type="text" value="{{text}}" ng-readonly="isDisabled">
+    <input type="checkbox" value="{{text}}" ng-checked="isDisabled">
+    <div ng-cloak>{{text}}</div>
+    <div ng-non-bindable>{{text}}</div>
+</div>
+<div ng-controller="Ccc">
+    <p>{{age}}</p>
+    <p>{{iphones}}</p>
+</div>
+<div ng-app="myApp" ng-controller="Ccc">
+    <ul>
+    	<li class="{{$even?'active1':'active2'}}" ng-repeat="data in datas">{{data}}==={{$even}}</li>
+    </ul>
+    <hr>
+    <div ng-repeat-start="data in dataLists">{{data}}</div>
+    <p>{{data}}</p>
+    <div ng-repeat-end>{{data}}</div>
+    <hr>
+    <input type="text" ng-model="filterVal"><input type="button" ng-click="fnFilter()" value="搜索">
+    <table>
+    	<tr>
+        	<th ng-click="fnSort('name')">姓名</th>
+            <th ng-click="fnSort('age')">年龄</th>
+        </tr>
+        <tr ng-repeat="data in dataLists">
+        	<td>{{data.name}}</td>
+            <td>{{data.age}}</td>
+        </tr>
+    </table>
+    <hr>
+    <input type="checkbox" ng-model="aaa">
+    <select>
+    	<option>11111</option>
+        <option ng-selected="aaa">22222</option>
+    </select>
+    <input type="text" ng-change="bbb='we are family'" ng-model="bbb">{{bbb}}<br>
+    <input type="text" value="sdfasfdafadf" ng-paste="ccc=true">{{ccc}}
+</div>
+</body>
+</html>
